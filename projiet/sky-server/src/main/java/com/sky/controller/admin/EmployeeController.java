@@ -2,6 +2,7 @@ package com.sky.controller.admin;
 
 import com.sky.constant.JwtClaimsConstant;
 import com.sky.dto.EmployeeLoginDTO;
+import com.sky.dto.EmployeeDTO;
 import com.sky.entity.Employee;
 import com.sky.properties.JwtProperties;
 import com.sky.result.Result;
@@ -59,6 +60,21 @@ public class EmployeeController {
                 .build();
 
         return Result.success(employeeLoginVO);
+    }
+
+    /**
+     * 新增员工
+     * 
+     * @param employeeDTO
+     * @return
+     */
+    @PostMapping    // REST 规范的核心思想是：URL 描述资源，HTTP 动词描述操作。这里不需要("/save")，直接使用 POST 请求来表示新增操作。
+    public Result<String> save(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("新增员工：{}", employeeDTO);
+
+        employeeService.save(employeeDTO);
+
+        return Result.success();
     }
 
     /**
