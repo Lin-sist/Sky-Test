@@ -1,7 +1,3 @@
-# RCA 故障复盘模板（Root Cause Analysis）
-
----
-
 # 报错：
 
 ## 1. 基本信息

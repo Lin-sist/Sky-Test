@@ -44,8 +44,8 @@
 
 ##  当前进度状态 (Status)
 - [x] 第一阶段：项目骨架与登录鉴权 *(登录链路已跑通)*
-- [ ] 第二阶段：管理端-员工模块  **当前阶段**
-- [ ] 第三阶段：复杂表与事务操作 (精简版)
+- [x] 第二阶段：管理端-员工模块  *(已完成收尾)*
+- [ ] 第三阶段：复杂表与事务操作 (精简版)  **当前阶段**
 - [ ] 第四阶段：AOP 进阶实战
 - [ ] 第五阶段：Redis 高并发实战
 - [ ] 第六阶段：订单核心状态机
@@ -79,14 +79,14 @@
 - [ ]  **回顾任务**：独立重写 `JwtTokenAdminInterceptor` 和 `EmployeeController#login`，不看源码，写完对比差异。
 
 ### 第二阶段：管理端-员工模块 (单表 CRUD 肌肉记忆)
-- [ ] 2.1 新增员工 (`EmployeeServiceImpl#save`)
+- [x] 2.1 新增员工 (`EmployeeServiceImpl#save`)
   -  **重点**：密码 MD5 加密、手动设置 `createTime` 等通用字段（为第四阶段 AOP 重构留坑）。
   -  **前置问题**：`DigestUtils.md5DigestAsHex()` 为什么不够安全？面试中被问到"加盐"怎么答？
-- [ ] 2.2 员工分页查询 (PageHelper 原理)
+- [x] 2.2 员工分页查询 (PageHelper 原理)
   -  **前置问题**：PageHelper 是怎么做到你不写 LIMIT 它帮你加上的？（提示：MyBatis 拦截器 / Plugin 机制）
-- [ ] 2.3 启用/禁用与编辑员工 (MyBatis 动态 SQL `<if>` 标签实战)
+- [x] 2.3 启用/禁用与编辑员工 (MyBatis 动态 SQL `<if>` 标签实战)
   -  **前置问题**：为什么用一个通用的 `update` 方法 + 动态 SQL，而不是给每个字段写一个 `updateXxx` 方法？
-- [ ] 2.4 **阶段复盘**：独立画出"新增员工"请求的完整流转图 (前端  Nginx  Controller  Service  Mapper  DB)。
+- [x] 2.4 **阶段复盘**：独立画出"新增员工"请求的完整流转图 (前端  Nginx  Controller  Service  Mapper  DB)。
 
 ### 第三阶段：复杂表与事务操作 (精简版)
 - [ ] 3.1 菜品管理 (`Dish` + `DishFlavor` 多表操作)
